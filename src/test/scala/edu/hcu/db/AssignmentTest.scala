@@ -1,5 +1,6 @@
 package edu.hcu.db
+import org.scalatest.FunSuite
 
-class AssignmentTest {
+class AssignmentTest  extends FunSuite{
 
 }
