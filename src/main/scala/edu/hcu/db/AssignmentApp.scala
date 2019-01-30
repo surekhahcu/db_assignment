@@ -4,8 +4,8 @@ object AssignmentApp extends App {
 
   Class.forName("com.mysql.jdbc.Driver")
 
-
-  /*val obj1 = Student(1, "radha@gmail.com","Radha", "Hyderabad")
+/*
+  val obj1 = Student(1, "radha@gmail.com","Radha", "Hyderabad")
   val obj2 = Student(2, "rakesh@gmail.com","Rakesh", "Hyderabad")
   val obj3 = Student(3, "Rekha@gmail.com", "Rekha","Hyderabad")
   val obj4 = Student(4,  "Rani@gmail.com", "Rani","Hyderabad")
@@ -23,11 +23,8 @@ object AssignmentApp extends App {
   val obj16= Student(16,  "Indu@gmail.com","Indhu", "Hyderabad")
 
   val result1 = Assignment.createStu(obj1)
-  //println(result)
   val result2 = Assignment.createStu(obj2)
-//  println(result1)
   val result3 = Assignment.createStu(obj3)
-  //println(result2)
   val result4 = Assignment.createStu(obj4)
   val result5 = Assignment.createStu(obj5)
   val result6 = Assignment.createStu(obj6)
@@ -42,11 +39,11 @@ object AssignmentApp extends App {
   val result15 = Assignment.createStu(obj15)
   val result16 = Assignment.createStu(obj16)
 
-  //val students = Assignment.getStudent
- // println(students)
+  val students = Assignment.getStudent
+ println(students)
 
- // val deleteResult= Assignment.deleteStu(2)
- // println(deleteResult)
+  val deleteResult= Assignment.deleteStu(2)
+ println(deleteResult)
 
 
  // val updateResult=Assignment.updateStu(obj1)
@@ -94,10 +91,9 @@ object AssignmentApp extends App {
   val root19=Assignment.createRoot(9,25)
   val root20=Assignment.createRoot(10,21)*/
 
-
   val topSub=Assignment.topSubject
-  val getStu=Assignment.getStudentWithSubject
+// val getStu=Assignment.getStudentWithSubject
   println(topSub)
-  println(getStu)
+ //println(getStu)
 
 }

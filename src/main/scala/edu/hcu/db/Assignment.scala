@@ -108,57 +108,6 @@ object Assignment {
     }
 
 
-  def updateSub(subject: Subject): Boolean = try {
-    val connection: Connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_assignment", "root", "root")
-    val statement = connection.prepareStatement("update subject set  name=? ,code=? where id=?")
-    statement.setString(1, subject.name)
-    statement.setString(2, subject.code)
-    statement.setInt(3, subject.id)
-    statement.execute()
-  } catch {
-    case e: Exception =>
-      e.printStackTrace()
-      false
-  } finally {
-    connection
-  }
-
-  def getSubjects: List[Subject] = {
-    val list = collection.mutable.ListBuffer[Subject]()
-
-    try {
-      val connection: Connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_assignment", "root", "root")
-      // val list = collection.mutable.ListBuffer[Student]()
-      val statement = connection.createStatement
-      val result = statement.executeQuery("select * from subject")
-      while (result.next) {
-        val id = result.getInt(1)
-        val name = result.getString(2)
-        val code = result.getString(3)
-        list.append(Subject(id, name, code))
-      }
-      list.toList
-    } catch {
-      case e: Exception => e.printStackTrace()
-        list.toList
-    } finally {
-      connection
-    }
-  }
-
-  def deleteSub(id: Int): Boolean = try {
-    val connection: Connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_assignment", "root", "root")
-    val statement = connection.prepareStatement("delete from student where id = ?")
-    statement.setInt(1, id)
-    statement.execute()
-  } catch {
-    case e: Exception =>
-      e.printStackTrace()
-      false
-  } finally {
-    connection
-  }
-
 
   def createRoot(stuId:Int,subId:Int):Boolean= try {
     val connection:Connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/db_assignment","root","root")
