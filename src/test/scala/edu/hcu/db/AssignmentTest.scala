@@ -58,11 +58,11 @@ class AssignmentTest extends FunSuite {
 
 
 
-  val objk = Student(2, "rakesh@gmail.com", "Rakesh", "Hyderabad")
+  val objk = Student(17, "renu@gmail.com", "Rakesh", "Hyderabad")
 
   test("Create Student") {
     val result = Assignment.createStu(objk)
-    val expectResult = false
+    val expectResult = true
     assert(result === expectResult)
   }
   val obj = Student(2, "radhe@gmail.com", "Rakesh", "Hyderabad")
@@ -73,6 +73,11 @@ class AssignmentTest extends FunSuite {
     assert(result === expectResult)
   }
 
+  test("delete student"){
+    val result = Assignment.deleteStu(17)
+    val expectResult = true
+    assert(result === expectResult)
+  }
 
   test("Get students ") {
     val result = Assignment.getStudent
@@ -95,17 +100,15 @@ class AssignmentTest extends FunSuite {
     assert(result === expectResult)
   }
 
-  test("delete student"){
-    val result = Assignment.deleteStu(2)
-    val expectResult = false
-    assert(result === expectResult)
-  }
 
   test("Get Students from Subjects"){
     val result = Assignment.getStudentWithSubject
     val expectResult =List(("Radha","C language"),
       ("Radha","Data Structures"),
       ("Radha","Algorithms"),
+      ("Rakesh","C language"),
+      ("Rakesh","Data Structures"),
+      ("Rakesh","Algorithms"),
       ("Rekha","Algorithms"),
       ("Rekha","Operating System"),
       ("Rekha","Parallel Computing"),

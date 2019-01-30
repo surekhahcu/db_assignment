@@ -26,7 +26,7 @@ object Assignment {
       statement.setString(2, student.email)
       statement.setString(3, student.name)
       statement.setString(4, student.address)
-      statement.execute()
+      !statement.execute()
     } catch {
       case e: Exception =>
         e.printStackTrace()
@@ -43,7 +43,7 @@ object Assignment {
     statement.setString(2, student.name)
     statement.setString(3, student.address)
     statement.setInt(5, student.id)
-    statement.execute()
+    !statement.execute()
   } catch {
     case e: Exception =>
       e.printStackTrace()
@@ -80,7 +80,7 @@ object Assignment {
     val connection: Connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_assignment", "root", "root")
     val statement = connection.prepareStatement("delete from student where id = ?")
     statement.setInt(1, id)
-    statement.execute()
+    !statement.execute()
   } catch {
     case e: Exception =>
       e.printStackTrace()
@@ -98,7 +98,7 @@ object Assignment {
       statement.setInt(1, subject.id)
       statement.setString(2, subject.name)
       statement.setString(3, subject.code)
-      statement.execute()
+      !statement.execute()
     } catch {
       case e: Exception =>
         e.printStackTrace()
@@ -114,7 +114,7 @@ object Assignment {
     val statement= connection.prepareStatement("insert into root(stuId,subId) values (?, ?)")
     statement.setInt(1,stuId )
     statement.setInt(2,subId )
-    statement.execute()
+    !statement.execute()
   }catch {
     case e: Exception =>
       e.printStackTrace()
